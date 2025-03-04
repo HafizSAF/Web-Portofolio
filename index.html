@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Hafiz Syafiq A.F</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p>HELLO, I'm</p>
+            <h1>HAFIZ SYAFIQ <span class="highlight">AHMAD</span> FAUZI</h1>
+            <p>Informatics Student and Web Programming</p>
+            <div class="buttons">
+                <a href="#portfolio" class="btn primary">Portfolio</a>
+                <a href="#contact" class="btn secondary">Contact</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="profile.png" alt="Hafiz Syafiq Ahmad Fauzi">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About <span class="highlight">Me</span></h2>
+        <div class="about-content">
+            <img src="about-image.jpg" alt="Foto Hafiz Syafiq Ahmad Fauzi">
+                <p>Saya adalah seorang Mahasiswa Informatika di Universitas Siliwangi yang berusia 19 tahun, dengan minat besar di bidang UI/UX Design & Web Programming. Saya senang menciptakan desain yang intuitif dan mengembangkan website yang responsif serta fungsional. Dengan perpaduan kreativitas dan logika, saya terus belajar dan berinovasi untuk menghadirkan pengalaman digital yang optimal.</p>
+            <div class="buttons">
+                <a href="CV_HafizSyafiq.pdf" class="btn primary" download>📄 Download CV</a>
+                <a href="#portfolio" class="btn secondary">💻 View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialized Skills Section -->
+    <section id="skills" class="skills">
+        <h2>Specialized Skills</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <img src="html.png" alt="HTML">
+                <p>80%</p>
+            </div>
+            <div class="skill">
+                <img src="css.png" alt="CSS">
+                <p>50%</p>
+            </div>
+            <div class="skill">
+                <img src="js.png" alt="JavaScript">
+                <p>50%</p>
+            </div>
+            <div class="skill">
+                <img src="figma.png" alt="Figma">
+                <p>80%</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Hire Me Section -->
+    <section class="why-hire">
+        <h2>Mengapa Harus Mempekerjakan Saya</h2>
+        <p>"Saya adalah UI/UX Designer & Web Programmer yang mengutamakan pengalaman pengguna dan efisiensi sistem. Dengan perpaduan desain intuitif dan pengembangan web yang responsif, saya siap membantu menciptakan solusi digital yang fungsional, estetis, dan berkinerja tinggi."</p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>Testimonial Client</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <img src="client1.jpg" alt="Client 1">
+                <p><b>Erdin Nurhidayat</b><br>PT Pancari Cipta Sejati</p>
+                <p>“Sangat puas dengan hasil kerja! Desainnya intuitif, pengembangannya cepat, dan hasil akhirnya sesuai harapan.”</p>
+            </div>
+            <div class="testimonial">
+                <img src="client2.jpg" alt="Client 2">
+                <p><b>Daffa Joni</b><br>PT Sarana Sentosa</p>
+                <p>“Profesional, detail, dan selalu mengutamakan pengalaman pengguna. Sangat direkomendasikan!”</p>
+            </div>
+            <div class="testimonial">
+                <img src="client3.jpg" alt="Client 3">
+                <p><b>Bambang Ombus</b><br>PT Tambang Sukses</p>
+                <p>“Desain UI untuk pengembangan website Bumdes Manonjaya”</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Experience Section -->
+    <section id="portfolio" class="portfolio">
+        <h2>Project Experience</h2>
+        <div class="portfolio-container">
+            <div class="project">
+                <img src="project1.png" alt="Project 1">
+                <h3>Similarity Website</h3>
+                <p>Front-end</p>
+                <p>Ini merupakan web untuk mengecek persamaan dari dua kalimat dengan menggunakan Cosin.</p>
+            </div>
+            <div class="project">
+                <img src="project2.png" alt="Project 2">
+                <h3>Tennis Tasik Website</h3>
+                <p>Front-end</p>
+                <p>Website ini merupakan web pendaftaran dan profile les tennis yang berada di Tasikmalaya.</p>
+            </div>
+            <div class="project">
+                <img src="project3.png" alt="Project 3">
+                <h3>Bumdes Manonjaya</h3>
+                <p>UI Designer</p>
+                <p>Desain UI untuk pengembangan website Bumdes Manonjaya.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <input type="text" name="first_name" placeholder="First Name" required>
+                <input type="text" name="last_name" placeholder="Last Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone Number">
+            </div>
+            <textarea name="message" placeholder="Message" required></textarea>
+            <button type="submit" class="btn primary">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h3>PORTOFOLIO</h3>
+        <p>Hafiz Syafiq Ahmad Fauzi</p>
+        <p>hafisyafiq936@gmail.com</p>
+        <div class="social-icons">
+            <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+            <a href="#"><img src="github.png" alt="GitHub"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+        </div>
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2025 Hafiz Syafiq Ahmad Fauzi. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
