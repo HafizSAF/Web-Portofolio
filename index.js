@@ -25,9 +25,11 @@ $(document).ready(function () {
         e.preventDefault();
 
         let isValid = true;
+
         $('.error-message').remove();
         $('.input-error').removeClass('input-error');
 
+        // Fungsi validasi input text
         function validateRequired(input, fieldName, maxLength = null) {
             const value = input.val().trim();
             if (!value) {
@@ -97,16 +99,34 @@ $(document).ready(function () {
                 type: 'POST',
                 data: $(this).serialize(),
                 success: function(response) {
-                    const res = JSON.parse(response);
-                    alert(res.message);
-                    if (res.status === 'success') {
-                        $('form')[0].reset(); // Reset form
+                    try {
+                        const res = JSON.parse(response);
+                        if (res.status === 'success') {
+                            $('#notificationModal').fadeIn(); // Tampilkan notifikasi
+                            $('form')[0].reset(); // Reset form
+                        } else {
+                            alert(res.message);
+                        }
+                    } catch (e) {
+                        alert("Respons server tidak valid: " + response);
                     }
                 },
-                error: function() {
-                    alert('Terjadi kesalahan saat mengirim data.');
+                error: function(xhr, status, error) {
+                    alert("AJAX Error: " + error);
                 }
             });
+        }
+    });
+
+    // Tutup modal saat tombol close diklik
+    $('#closeNotification, #okNotification').click(function () {
+        $('#notificationModal').fadeOut();
+    });
+
+    // Tutup modal saat klik di luar kotak
+    $(window).click(function (event) {
+        if ($(event.target).is('#notificationModal')) {
+            $('#notificationModal').fadeOut();
         }
     });
 });
