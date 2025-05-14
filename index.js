@@ -22,18 +22,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 $(document).ready(function () {
     $('form').on('submit', function (e) {
-        e.preventDefault(); // Mencegah pengiriman form default
+        e.preventDefault();
 
         let isValid = true;
-
-        // Bersihkan error sebelumnya
         $('.error-message').remove();
         $('.input-error').removeClass('input-error');
 
-        // Fungsi validasi input text
         function validateRequired(input, fieldName, maxLength = null) {
             const value = input.val().trim();
-
             if (!value) {
                 $('<div class="error-message" style="color:red;font-size:0.8rem;margin-top:4px;">' + fieldName + ' harus diisi.</div>').insertAfter(input);
                 input.addClass('input-error');
@@ -45,13 +41,10 @@ $(document).ready(function () {
             }
         }
 
-        // Validasi First Name
+        // Validasi semua field
         validateRequired($('input[name="first_name"]'), 'First Name', 50);
-
-        // Validasi Last Name
         validateRequired($('input[name="last_name"]'), 'Last Name', 50);
 
-        // Validasi Email
         const emailInput = $('input[name="email"]');
         const emailValue = emailInput.val().trim();
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -70,7 +63,6 @@ $(document).ready(function () {
             isValid = false;
         }
 
-        // Validasi Phone Number (Opsional tapi jika diisi harus benar)
         const phoneInput = $('input[name="phone"]');
         const phoneValue = phoneInput.val().trim();
         const phoneRegex = /^\+?[0-9\s\-()]{7,}$/;
@@ -85,7 +77,6 @@ $(document).ready(function () {
             isValid = false;
         }
 
-        // Validasi Message
         const messageInput = $('textarea[name="message"]');
         const messageValue = messageInput.val().trim();
 
@@ -99,9 +90,23 @@ $(document).ready(function () {
             isValid = false;
         }
 
-        // Jika semua validasi lolos
+        // Kirim data via AJAX jika valid
         if (isValid) {
-            this.submit(); // Kirim form
+            $.ajax({
+                url: 'submit-contact.php',
+                type: 'POST',
+                data: $(this).serialize(),
+                success: function(response) {
+                    const res = JSON.parse(response);
+                    alert(res.message);
+                    if (res.status === 'success') {
+                        $('form')[0].reset(); // Reset form
+                    }
+                },
+                error: function() {
+                    alert('Terjadi kesalahan saat mengirim data.');
+                }
+            });
         }
     });
 });
